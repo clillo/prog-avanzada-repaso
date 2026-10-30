@@ -1,0 +1,56 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run listas-repaso (terminal)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cmake --build build; if ($LASTEXITCODE -eq 0) { .\\build\\listas-repaso.exe }",
+      "cwd": "${workspaceFolder}/listas-repaso",
+      "env": {
+        "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+      }
+    },
+    {
+      "name": "Run listas-objetos (terminal)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cmake --build build; if ($LASTEXITCODE -eq 0) { .\\build\\listas-objetos.exe }",
+      "cwd": "${workspaceFolder}/listas-repaso",
+      "env": {
+        "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+      }
+    },
+    {
+      "name": "Run listas-ordenadas (terminal)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cmake --build build; if ($LASTEXITCODE -eq 0) { .\\build\\listas-ordenadas.exe }",
+      "cwd": "${workspaceFolder}/listas-repaso",
+      "env": {
+        "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+      }
+    },
+    {
+      "name": "Debug listas-ordenadas (gdb)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/listas-repaso/build/listas-ordenadas.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/listas-repaso",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/Users/Carlos/Tools/mingw64/bin/gdb.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "CMake: build"
+    }
+  ]
+}

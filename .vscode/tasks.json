@@ -1,0 +1,93 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: configure",
+      "type": "shell",
+      "command": "cmake -S . -B build -G \"MinGW Makefiles\" -DCMAKE_CXX_COMPILER=C:/Users/Carlos/Tools/mingw64/bin/g++.exe -DCMAKE_MAKE_PROGRAM=C:/Users/Carlos/Tools/mingw64/bin/mingw32-make.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/listas-repaso",
+        "env": {
+          "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: build",
+      "type": "shell",
+      "command": "cmake --build build",
+      "options": {
+        "cwd": "${workspaceFolder}/listas-repaso",
+        "env": {
+          "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run listas-repaso",
+      "dependsOn": "CMake: build",
+      "dependsOrder": "sequence",
+      "type": "shell",
+      "command": ".\\build\\listas-repaso.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/listas-repaso",
+        "env": {
+          "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run listas-objetos",
+      "dependsOn": "CMake: build",
+      "dependsOrder": "sequence",
+      "type": "shell",
+      "command": ".\\build\\listas-objetos.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/listas-repaso",
+        "env": {
+          "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run listas-ordenadas",
+      "dependsOn": "CMake: build",
+      "dependsOrder": "sequence",
+      "type": "shell",
+      "command": ".\\build\\listas-ordenadas.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/listas-repaso",
+        "env": {
+          "PATH": "C:\\Users\\Carlos\\Tools\\mingw64\\bin;C:\\Users\\Carlos\\Tools\\cmake\\bin;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
